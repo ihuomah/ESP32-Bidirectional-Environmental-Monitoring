@@ -1,0 +1,1564 @@
+[
+    {
+        "id": "ce17378c56c37054",
+        "type": "tab",
+        "label": "ESP32 Flow Telemetry",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "tab_mongo_hist",
+        "type": "tab",
+        "label": "MongoDB History",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "f93349de1c13f15d",
+        "type": "tab",
+        "label": "Dynamic Sensor Reporting Inverval",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "5da06e19e54af21a",
+        "type": "tab",
+        "label": "ESP32 bi-directional Control Pad",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "b2ba21af03339d3f",
+        "type": "mqtt-broker",
+        "name": "jiggy",
+        "broker": "192.168.43.37",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "ecf7347557d5e40f",
+        "type": "ui_tab",
+        "name": "mi-ESP32_Monitor",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "9175d76e623c3789",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "97c684157f085e01",
+        "type": "ui_group",
+        "name": "Sensors",
+        "tab": "ecf7347557d5e40f",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f1dcb266215eb527",
+        "type": "ui_tab",
+        "name": "ESP32 Monitor",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "6411588fc6e45888",
+        "type": "ui_group",
+        "name": "Sensors",
+        "tab": "f1dcb266215eb527",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "89483d8271331833",
+        "type": "ui_tab",
+        "name": "Neo_Pixel",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "7a1bc34c4c64b9e3",
+        "type": "ui_tab",
+        "name": "Brightness",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "68875a9366077e02",
+        "type": "ui_tab",
+        "name": "Power",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "aa8716a4bf26e60d",
+        "type": "ui_group",
+        "name": "control",
+        "tab": "68875a9366077e02",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "35b5cf75086dadcf",
+        "type": "ui_group",
+        "name": "Control",
+        "tab": "7a1bc34c4c64b9e3",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "7180a86e45b29fea",
+        "type": "mongodb4-client",
+        "name": "",
+        "protocol": "mongodb",
+        "hostname": "127.0.0.1:27017",
+        "port": "",
+        "dbName": "ESP32_DB",
+        "appName": "",
+        "authSource": "",
+        "authMechanism": "DEFAULT",
+        "tls": false,
+        "tlsCAFile": "",
+        "tlsCertificateKeyFile": "",
+        "tlsInsecure": false,
+        "connectTimeoutMS": "30000",
+        "socketTimeoutMS": "0",
+        "minPoolSize": "0",
+        "maxPoolSize": "100",
+        "maxIdleTimeMS": "0",
+        "uri": "",
+        "advanced": "{}",
+        "uriTabActive": "tab-uri-simple"
+    },
+    {
+        "id": "97b6de1e7e932e4b",
+        "type": "ui_tab",
+        "name": "Historical data",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "f4cc9ff648fd67b0",
+        "type": "ui_tab",
+        "name": "mongodb",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "ui_tab_mongo",
+        "type": "ui_tab",
+        "name": "mongodb",
+        "icon": "dashboard",
+        "order": 10,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "ui_group_mongo_hist",
+        "type": "ui_group",
+        "name": "Hist Dataui",
+        "tab": "ui_tab_mongo",
+        "order": 1,
+        "disp": true,
+        "width": "24",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "ui_group_interval_ctrl",
+        "type": "ui_group",
+        "name": "Device Control",
+        "tab": "ui_tab_mongo",
+        "order": 2,
+        "disp": true,
+        "width": "24",
+        "collapse": false
+    },
+    {
+        "id": "b3bc4f62b78ff04c",
+        "type": "ui_group",
+        "name": "ESP32 Device Control",
+        "tab": "ui_tab_mongo",
+        "order": 3,
+        "disp": true,
+        "width": "24",
+        "collapse": false
+    },
+    {
+        "id": "44b378fcaa8319cd",
+        "type": "ui_tab",
+        "name": "ESP32 Control",
+        "icon": "settings_remote",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "30bacd1de8da6fe1",
+        "type": "ui_group",
+        "name": "Device Control",
+        "tab": "44b378fcaa8319cd",
+        "order": 1,
+        "disp": true,
+        "width": "24",
+        "collapse": false
+    },
+    {
+        "id": "ui_tab_esp32_cp",
+        "type": "ui_tab",
+        "name": "ESP32 Control Pad",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "ui_group_esp32_cp",
+        "type": "ui_group",
+        "name": "Controls",
+        "tab": "ui_tab_esp32_cp",
+        "order": 1,
+        "disp": true,
+        "width": "24",
+        "collapse": false
+    },
+    {
+        "id": "7743e988740c049e",
+        "type": "ui_tab",
+        "name": "bi-directional control Pad",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "e4e6bce6e5292d38",
+        "type": "ui_group",
+        "name": "Control Settings",
+        "tab": "7743e988740c049e",
+        "order": 1,
+        "disp": true,
+        "width": "24",
+        "collapse": false
+    },
+    {
+        "id": "65f9b91ee7bc677b",
+        "type": "ui_group",
+        "name": "Thresholds & Interval",
+        "tab": "7743e988740c049e",
+        "order": 2,
+        "disp": true,
+        "width": "24",
+        "collapse": false
+    },
+    {
+        "id": "1a9324ca156815d5",
+        "type": "mqtt-broker",
+        "name": "LocalBroker",
+        "broker": "192.168.43.37",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "7d610d43d34b98c4",
+        "type": "ui_tab",
+        "name": "bi-directional control Panel",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "ba26806f9a66f6c7",
+        "type": "ui_group",
+        "name": "Control Settings",
+        "tab": "7d610d43d34b98c4",
+        "order": 1,
+        "disp": true,
+        "width": "24",
+        "collapse": false
+    },
+    {
+        "id": "060f97cd2f1f1bd0",
+        "type": "ui_group",
+        "name": "Thresholds & Interval",
+        "tab": "7d610d43d34b98c4",
+        "order": 2,
+        "disp": true,
+        "width": "24",
+        "collapse": false
+    },
+    {
+        "id": "26af5880f7ee1b8b",
+        "type": "mqtt-broker",
+        "name": "LocalBroker",
+        "broker": "192.168.43.37",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true
+    },
+    {
+        "id": "e5733da1aa80925e",
+        "type": "ui_tab",
+        "name": "bi-dir control ",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "4d044fe3842546e2",
+        "type": "ui_group",
+        "name": "Control Settings",
+        "tab": "e5733da1aa80925e",
+        "order": 1,
+        "disp": true,
+        "width": "24",
+        "collapse": false
+    },
+    {
+        "id": "5705aa1cab435ef2",
+        "type": "mqtt-broker",
+        "name": "LocalBroker",
+        "broker": "192.168.43.37",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true
+    },
+    {
+        "id": "ui_tab_esp32",
+        "type": "ui_tab",
+        "name": "ESP32 bi Control Pad",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "ui_group_controls",
+        "type": "ui_group",
+        "name": "Controls",
+        "tab": "ui_tab_esp32",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "ui_group_telemetry",
+        "type": "ui_group",
+        "name": "Telemetry",
+        "tab": "ui_tab_esp32",
+        "order": 2,
+        "disp": true,
+        "width": "12",
+        "collapse": false
+    },
+    {
+        "id": "mqtt_broker",
+        "type": "mqtt-broker",
+        "name": "Local Mosquitto",
+        "broker": "192.168.43.37",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "cd1f48f0cbe52a35",
+        "type": "mqtt in",
+        "z": "ce17378c56c37054",
+        "name": "mqtt in",
+        "topic": "18138/evt/status/fmt/json",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "b2ba21af03339d3f",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 70,
+        "y": 140,
+        "wires": [
+            [
+                "7737868c32ed6818"
+            ]
+        ]
+    },
+    {
+        "id": "7737868c32ed6818",
+        "type": "json",
+        "z": "ce17378c56c37054",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 210,
+        "y": 140,
+        "wires": [
+            [
+                "ef07ac811b91f4d3",
+                "b515f697b77311da"
+            ]
+        ]
+    },
+    {
+        "id": "ef07ac811b91f4d3",
+        "type": "change",
+        "z": "ce17378c56c37054",
+        "name": "Extract Temperature ",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.d.temp",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "temperature",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 400,
+        "y": 140,
+        "wires": [
+            [
+                "1c549fa5b4c75a03",
+                "5c9f86ba47fd37b6",
+                "88433dae132c2d13",
+                "98ae7feac9cc8daa"
+            ]
+        ]
+    },
+    {
+        "id": "5c9f86ba47fd37b6",
+        "type": "ui_gauge",
+        "z": "ce17378c56c37054",
+        "name": "",
+        "group": "97c684157f085e01",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature (°C)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "50",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 650,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "b515f697b77311da",
+        "type": "change",
+        "z": "ce17378c56c37054",
+        "name": "Extract Humidity",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload.d.humidity",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "humidity",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 300,
+        "y": 460,
+        "wires": [
+            [
+                "0e4f1ff96eb8e2b3",
+                "fd3cc2e50e7c4e3d",
+                "80a758bc0f9640c4",
+                "98ae7feac9cc8daa"
+            ]
+        ]
+    },
+    {
+        "id": "0e4f1ff96eb8e2b3",
+        "type": "ui_gauge",
+        "z": "ce17378c56c37054",
+        "name": "",
+        "group": "97c684157f085e01",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humidity (%)",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 630,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "88433dae132c2d13",
+        "type": "ui_chart",
+        "z": "ce17378c56c37054",
+        "name": "",
+        "group": "97c684157f085e01",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "Temperature",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "50",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 650,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "80a758bc0f9640c4",
+        "type": "ui_chart",
+        "z": "ce17378c56c37054",
+        "name": "",
+        "group": "97c684157f085e01",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "label": "Humidity",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "50",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 620,
+        "y": 600,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1c549fa5b4c75a03",
+        "type": "debug",
+        "z": "ce17378c56c37054",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 640,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "fd3cc2e50e7c4e3d",
+        "type": "debug",
+        "z": "ce17378c56c37054",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 520,
+        "wires": []
+    },
+    {
+        "id": "241b5f80f0a1b9c1",
+        "type": "mongodb4",
+        "z": "ce17378c56c37054",
+        "clientNode": "7180a86e45b29fea",
+        "mode": "collection",
+        "collection": "iot_data",
+        "operation": "",
+        "output": "toArray",
+        "maxTimeMS": "0",
+        "handleDocId": false,
+        "name": "mongodb_write",
+        "x": 960,
+        "y": 320,
+        "wires": [
+            [
+                "9b124c718d2a7ede"
+            ]
+        ]
+    },
+    {
+        "id": "7f6c4eb2d5cde68d",
+        "type": "function",
+        "z": "ce17378c56c37054",
+        "name": "MongoDB data prep",
+        "func": "// After your Join node, expecting: { temperature: <num>, humidity: <num> }\nmsg.operation  = \"insertOne\";        // <-- not \"insert\"\nmsg.collection = \"iot_data\";         // safe even if set in the node\n\nmsg.payload = {\n  temperature: Number(msg.payload.temperature),\n  humidity: Number(msg.payload.humidity),\n  timestamp: new Date()\n};\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 720,
+        "y": 320,
+        "wires": [
+            [
+                "241b5f80f0a1b9c1"
+            ]
+        ]
+    },
+    {
+        "id": "98ae7feac9cc8daa",
+        "type": "join",
+        "z": "ce17378c56c37054",
+        "name": "joined msgs",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "useparts": false,
+        "accumulate": true,
+        "timeout": "",
+        "count": "2",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 500,
+        "y": 320,
+        "wires": [
+            [
+                "7f6c4eb2d5cde68d"
+            ]
+        ]
+    },
+    {
+        "id": "9b124c718d2a7ede",
+        "type": "debug",
+        "z": "ce17378c56c37054",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1160,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "inject_load_hist",
+        "type": "inject",
+        "z": "tab_mongo_hist",
+        "name": "Load Historical Data",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.5,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 130,
+        "y": 120,
+        "wires": [
+            [
+                "fn_build_query"
+            ]
+        ]
+    },
+    {
+        "id": "fn_build_query",
+        "type": "function",
+        "z": "tab_mongo_hist",
+        "name": "Build History Query",
+        "func": "\n\nconst range = msg.payload || \"all\";  \nconst query = {};\nconst options = { sort: { timestamp: 1 }, limit: 1000 };\n\nif (range !== \"all\") {\n    const now = new Date();\n    let msBack = 0;\n\n    if (range === \"1h\") msBack = 1 * 60 * 60 * 1000;\n    if (range === \"6h\") msBack = 6 * 60 * 60 * 1000;\n    if (range === \"24h\") msBack = 24 * 60 * 60 * 1000;\n\n    if (msBack > 0) {\n        const from = new Date(now.getTime() - msBack);\n        query.timestamp = { $gte: from };\n    }\n}\n\nmsg.operation = \"find\";\nmsg.collection = \"iot_data\";\nmsg.payload = query;\nmsg.options = options;\n\nreturn msg;\n\n\n\n\n\n\n",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 120,
+        "wires": [
+            [
+                "mongo_read_hist"
+            ]
+        ]
+    },
+    {
+        "id": "mongo_read_hist",
+        "type": "mongodb4",
+        "z": "tab_mongo_hist",
+        "clientNode": "7180a86e45b29fea",
+        "mode": "collection",
+        "collection": "iot_data",
+        "operation": "find",
+        "output": "toArray",
+        "maxTimeMS": "",
+        "handleDocId": false,
+        "name": "mongodb_read",
+        "x": 650,
+        "y": 120,
+        "wires": [
+            [
+                "fn_history_to_chart"
+            ]
+        ]
+    },
+    {
+        "id": "fn_history_to_chart",
+        "type": "function",
+        "z": "tab_mongo_hist",
+        "name": "History → Chart dataset",
+        "func": "\n\nconst docs = msg.payload;\nmsg._docs = docs;\n\nif (!Array.isArray(docs)) {\n    node.warn(\"History to Charts: payload is not an array\");\n    return null;\n}\n\nconst tempPoints = [];\nconst humPoints = [];\n\nfor (const d of docs) {\n    if (!d.timestamp) continue;\n\n    const t = new Date(d.timestamp).getTime(); \n    const temp = Number(d.temperature);\n    const hum = Number(d.humidity);\n\n    if (!Number.isNaN(temp)) {\n        tempPoints.push({ x: t, y: temp });\n    }\n    if (!Number.isNaN(hum)) {\n        humPoints.push({ x: t, y: hum });\n    }\n}\n\nmsg.payload = [{\n    series: [\"Temperature\", \"Humidity\"],\n    data: [tempPoints, humPoints],\n    labels: []\n}];\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 910,
+        "y": 120,
+        "wires": [
+            [
+                "ui_hist_chart",
+                "1a1deb6aa2e32424"
+            ]
+        ]
+    },
+    {
+        "id": "ui_hist_chart",
+        "type": "ui_chart",
+        "z": "tab_mongo_hist",
+        "name": "Historical Temp/Humidity",
+        "group": "ui_group_mongo_hist",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "Historical Temp/Humidity",
+        "chartType": "line",
+        "legend": "true",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "Click the button to load historical data",
+        "dot": false,
+        "ymin": 0,
+        "ymax": 100,
+        "removeOlder": 0,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#ff7f0e",
+            "#2ca02c",
+            "#d62728",
+            "#9467bd",
+            "#8c564b",
+            "#e377c2",
+            "#7f7f7f",
+            "#bcbd22"
+        ],
+        "outputs": 1,
+        "useDifferentColor": true,
+        "className": "",
+        "x": 1210,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cee8335fd524a091",
+        "type": "ui_dropdown",
+        "z": "tab_mongo_hist",
+        "name": "",
+        "label": "Time range",
+        "tooltip": "",
+        "place": "Select option",
+        "group": "ui_group_mongo_hist",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "multiple": false,
+        "options": [
+            {
+                "label": "Last 1hr",
+                "value": "1h",
+                "type": "str"
+            },
+            {
+                "label": "Last 6hrs",
+                "value": "6h",
+                "type": "str"
+            },
+            {
+                "label": "Last 12hrs",
+                "value": "12h",
+                "type": "str"
+            },
+            {
+                "label": "all",
+                "value": "all",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "topic",
+        "topicType": "msg",
+        "className": "",
+        "x": 210,
+        "y": 280,
+        "wires": [
+            [
+                "fn_build_query"
+            ]
+        ]
+    },
+    {
+        "id": "7232b1e8e45f940e",
+        "type": "ui_text",
+        "z": "tab_mongo_hist",
+        "group": "ui_group_mongo_hist",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Summary",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 1320,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "1a1deb6aa2e32424",
+        "type": "function",
+        "z": "tab_mongo_hist",
+        "name": "Compute Stats",
+        "func": "const docs = msg._docs || msg.payload._docs || null;\n\n\n\nif (!Array.isArray(docs) || !docs.length) {\n    msg.payload = \"No data loaded.\";\n    return msg;\n}\n\nlet minT = Infinity, maxT = -Infinity, sumT = 0, countT = 0;\nlet minH = Infinity, maxH = -Infinity, sumH = 0, countH = 0;\n\nfor (const d of docs) {\n    const t = Number(d.temperature);\n    const h = Number(d.humidity);\n\n    if (!Number.isNaN(t)) {\n        if (t < minT) minT = t;\n        if (t > maxT) maxT = t;\n        sumT += t;\n        countT++;\n    }\n    if (!Number.isNaN(h)) {\n        if (h < minH) minH = h;\n        if (h > maxH) maxH = h;\n        sumH += h;\n        countH++;\n    }\n}\n\nconst avgT = countT ? (sumT / countT).toFixed(2) : \"N/A\";\nconst avgH = countH ? (sumH / countH).toFixed(2) : \"N/A\";\n\nmsg.payload =\n    `Readings: ${docs.length} | ` +\n    `Temp (°C) → min: ${minT.toFixed(2)}, max: ${maxT.toFixed(2)}, avg: ${avgT} | ` +\n    `Humidity (%) → min: ${minH.toFixed(2)}, max: ${maxH.toFixed(2)}, avg: ${avgH}`;\n\nconst last = msg._docs[msg._docs.length - 1];\nif (last) {\n    msg.payload += ` | Latest → Temp: ${last.temperature}°C, Humidity: ${last.humidity}%`;\n}\n\n\nreturn msg;\n\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1080,
+        "y": 240,
+        "wires": [
+            [
+                "ui_hist_chart",
+                "7232b1e8e45f940e"
+            ]
+        ]
+    },
+    {
+        "id": "e081d9d8be8c47e4",
+        "type": "inject",
+        "z": "tab_mongo_hist",
+        "name": "Auto refresh",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "300",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 120,
+        "y": 200,
+        "wires": [
+            [
+                "fn_build_query"
+            ]
+        ]
+    },
+    {
+        "id": "6a3642602769c0fa",
+        "type": "comment",
+        "z": "tab_mongo_hist",
+        "name": "MonoDB History Data Flow",
+        "info": "",
+        "x": 710,
+        "y": 60,
+        "wires": []
+    },
+    {
+        "id": "ui_form_interval",
+        "type": "ui_form",
+        "z": "f93349de1c13f15d",
+        "name": "Reporting Interval Dashboard",
+        "label": "Update ESP32 Reporting Interval",
+        "group": "ui_group_interval_ctrl",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "options": [
+            {
+                "label": "Interval (seconds)",
+                "value": "interval_sec",
+                "type": "number",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "interval_sec": ""
+        },
+        "payload": "",
+        "submit": "Update",
+        "cancel": "Cancel",
+        "topic": "",
+        "topicType": "str",
+        "splitLayout": false,
+        "className": "",
+        "x": 240,
+        "y": 280,
+        "wires": [
+            [
+                "fn_build_interval_cmd"
+            ]
+        ]
+    },
+    {
+        "id": "fn_build_interval_cmd",
+        "type": "function",
+        "z": "f93349de1c13f15d",
+        "name": "Build Interval Command JSON",
+        "func": "const data = msg.payload || {};\nlet sec = parseInt(data.interval_sec, 10);\n\nif (isNaN(sec)) {\n    node.warn(\"Invalid interval value\");\n    return null;\n}\n\n\nif (sec < 5) sec = 5;\nif (sec > 3600) sec = 3600;\n\nmsg.topic = \"18138/cmd/interval/fmt/json\"; \nmsg.payload = JSON.stringify({ interval_sec: sec });\n\nnode.status({ fill: \"green\", shape: \"dot\", text: `Set interval to ${sec}s` });\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 540,
+        "y": 280,
+        "wires": [
+            [
+                "mqtt_out_interval_cmd"
+            ]
+        ]
+    },
+    {
+        "id": "mqtt_out_interval_cmd",
+        "type": "mqtt out",
+        "z": "f93349de1c13f15d",
+        "name": "Mqtt out",
+        "topic": "",
+        "qos": "1",
+        "retain": "true",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "b2ba21af03339d3f",
+        "x": 780,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "810f1d754252f977",
+        "type": "comment",
+        "z": "f93349de1c13f15d",
+        "name": "Working Sensor Reporting Interval  Flow",
+        "info": "",
+        "x": 510,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "523352b69e24e452",
+        "type": "ui_dropdown",
+        "z": "5da06e19e54af21a",
+        "name": "Mode",
+        "label": "Mode",
+        "place": "Select mode",
+        "group": "ui_group_controls",
+        "order": 1,
+        "width": 4,
+        "options": [
+            {
+                "label": "AUTO",
+                "value": "auto",
+                "type": "str"
+            },
+            {
+                "label": "MANUAL",
+                "value": "manual",
+                "type": "str"
+            },
+            {
+                "label": "OFF",
+                "value": "off",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "mode",
+        "x": 150,
+        "y": 80,
+        "wires": [
+            [
+                "50b6250495c68a89"
+            ]
+        ]
+    },
+    {
+        "id": "28b738b4374a6a2d",
+        "type": "ui_dropdown",
+        "z": "5da06e19e54af21a",
+        "name": "LED Color",
+        "label": "LED Color (Manual Mode)",
+        "place": "Select color",
+        "group": "ui_group_controls",
+        "order": 2,
+        "width": 4,
+        "options": [
+            {
+                "label": "OFF",
+                "value": "off",
+                "type": "str"
+            },
+            {
+                "label": "RED",
+                "value": "red",
+                "type": "str"
+            },
+            {
+                "label": "GREEN",
+                "value": "green",
+                "type": "str"
+            },
+            {
+                "label": "BLUE",
+                "value": "blue",
+                "type": "str"
+            },
+            {
+                "label": "YELLOW",
+                "value": "yellow",
+                "type": "str"
+            },
+            {
+                "label": "PURPLE",
+                "value": "purple",
+                "type": "str"
+            }
+        ],
+        "payload": "",
+        "topic": "color",
+        "x": 170,
+        "y": 140,
+        "wires": [
+            [
+                "50b6250495c68a89"
+            ]
+        ]
+    },
+    {
+        "id": "33f253a3b24803e3",
+        "type": "ui_numeric",
+        "z": "5da06e19e54af21a",
+        "name": "Alarm Cold",
+        "label": "Alarm Cold (°C)",
+        "group": "ui_group_controls",
+        "order": 3,
+        "width": 3,
+        "wrap": false,
+        "topic": "alarmCold",
+        "format": "{{value}}",
+        "min": "-50",
+        "max": "50",
+        "step": 1,
+        "x": 190,
+        "y": 200,
+        "wires": [
+            [
+                "50b6250495c68a89"
+            ]
+        ]
+    },
+    {
+        "id": "79c81a592f89a4c1",
+        "type": "ui_numeric",
+        "z": "5da06e19e54af21a",
+        "name": "Warn Cold",
+        "label": "Warn Cold (°C)",
+        "group": "ui_group_controls",
+        "order": 4,
+        "width": 3,
+        "wrap": false,
+        "topic": "warnCold",
+        "format": "{{value}}",
+        "min": "-50",
+        "max": "50",
+        "step": 1,
+        "x": 190,
+        "y": 240,
+        "wires": [
+            [
+                "50b6250495c68a89"
+            ]
+        ]
+    },
+    {
+        "id": "38774194ca4ade97",
+        "type": "ui_numeric",
+        "z": "5da06e19e54af21a",
+        "name": "Warn Hot",
+        "label": "Warn Hot (°C)",
+        "group": "ui_group_controls",
+        "order": 5,
+        "width": 3,
+        "wrap": false,
+        "topic": "warnHot",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "80",
+        "step": 1,
+        "x": 180,
+        "y": 280,
+        "wires": [
+            [
+                "50b6250495c68a89"
+            ]
+        ]
+    },
+    {
+        "id": "dda041a9305c1957",
+        "type": "ui_numeric",
+        "z": "5da06e19e54af21a",
+        "name": "Alarm Hot",
+        "label": "Alarm Hot (°C)",
+        "group": "ui_group_controls",
+        "order": 6,
+        "width": 3,
+        "wrap": false,
+        "topic": "alarmHot",
+        "format": "{{value}}",
+        "min": "0",
+        "max": "80",
+        "step": 1,
+        "x": 190,
+        "y": 320,
+        "wires": [
+            [
+                "50b6250495c68a89"
+            ]
+        ]
+    },
+    {
+        "id": "1eda27bdb3486334",
+        "type": "ui_button",
+        "z": "5da06e19e54af21a",
+        "name": "Send Command",
+        "group": "ui_group_controls",
+        "order": 7,
+        "width": 4,
+        "height": 1,
+        "label": "Send Update",
+        "icon": "send",
+        "payload": "send",
+        "topic": "send",
+        "x": 160,
+        "y": 380,
+        "wires": [
+            [
+                "50b6250495c68a89"
+            ]
+        ]
+    },
+    {
+        "id": "50b6250495c68a89",
+        "type": "function",
+        "z": "5da06e19e54af21a",
+        "name": "Build JSON Command",
+        "func": "\n\nlet cmd = flow.get('esp32_cmd') || {\n    mode: \"auto\",\n    color: \"off\",\n    alarmCold: 0,\n    warnCold: 10,\n    warnHot: 25,\n    alarmHot: 30\n};\n\nswitch (msg.topic) {\n    case 'mode':\n        cmd.mode = msg.payload;\n        flow.set('esp32_cmd', cmd);\n        return null;\n    case 'color':\n        cmd.color = msg.payload;\n        flow.set('esp32_cmd', cmd);\n        return null;\n    case 'alarmCold':\n    case 'warnCold':\n    case 'warnHot':\n    case 'alarmHot':\n        let v = parseFloat(msg.payload);\n        if (!isNaN(v)) {\n            cmd[msg.topic] = v;\n            flow.set('esp32_cmd', cmd);\n        }\n        return null;\n    case 'send':\n        \n        msg.payload = cmd;\n        return msg;\n}\n\nreturn null;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 460,
+        "y": 260,
+        "wires": [
+            [
+                "686e697f436356f0"
+            ]
+        ]
+    },
+    {
+        "id": "686e697f436356f0",
+        "type": "mqtt out",
+        "z": "5da06e19e54af21a",
+        "name": "ESP32 Command Out",
+        "topic": "18138/cmd/display/fmt/json",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "b2ba21af03339d3f",
+        "x": 730,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "7dfd5d3cf01ebf59",
+        "type": "mqtt in",
+        "z": "5da06e19e54af21a",
+        "name": "ESP32 Telemetry",
+        "topic": "18138/evt/status/fmt/json",
+        "qos": "0",
+        "datatype": "json",
+        "broker": "b2ba21af03339d3f",
+        "nl": false,
+        "rap": false,
+        "rh": 0,
+        "inputs": 0,
+        "x": 170,
+        "y": 480,
+        "wires": [
+            [
+                "ac7f1394eb4c5199"
+            ]
+        ]
+    },
+    {
+        "id": "ac7f1394eb4c5199",
+        "type": "function",
+        "z": "5da06e19e54af21a",
+        "name": "Format Telemetry",
+        "func": "const d = msg.payload.d || {};\nconst t = d.temp ?? \"-\";\nconst h = d.humidity ?? \"-\";\nconst m = d.mode ?? \"-\";\nmsg.payload = `Temp: ${t} °C   |   Humidity: ${h} %   |   Mode: ${m}`;\nreturn msg;",
+        "outputs": 1,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 480,
+        "wires": [
+            [
+                "cdfb19b6fee33f3d"
+            ]
+        ]
+    },
+    {
+        "id": "cdfb19b6fee33f3d",
+        "type": "ui_text",
+        "z": "5da06e19e54af21a",
+        "group": "ui_group_telemetry",
+        "order": 1,
+        "width": 12,
+        "height": "",
+        "name": "",
+        "label": "Latest Telemetry",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": "",
+        "color": "#000000",
+        "x": 680,
+        "y": 480,
+        "wires": []
+    },
+    {
+        "id": "949968acb783bcb1",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-dashboard": "3.6.6",
+            "node-red-contrib-mongodb4": "3.1.1"
+        }
+    }
+]
