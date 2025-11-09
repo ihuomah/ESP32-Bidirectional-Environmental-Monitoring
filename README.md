@@ -157,6 +157,14 @@ The LED responds correctly in automatic mode (based on thresholds).
 Manual mode and control commands from the dashboard are received by the ESP32-C3.
 
 Data is logged into MongoDB.
+
+## Notes
+
+All components (MQTT broker, Node-RED, MongoDB) were run locally for this implementation.
+
+No external cloud MQTT services or remote dashboards were used.
+
+Security (TLS/authentication) was not enabled in this prototype; it is suggested as future work.
 ## References
 
 This work was completed as part of an academic project titled:  
