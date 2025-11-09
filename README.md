@@ -32,3 +32,87 @@ A full system demonstration video is available on YouTube:
 ├── node-red/ Exported Node-RED flow
 ├── docs/  Diagrams and reference images
 └── README.md
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Prerequisites
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+The system was tested with the following:
+
+Arduino IDE
+
+Mosquitto MQTT broker (local installation)
+
+Node-RED (local installation)
+
+MongoDB Community Server (local installation)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+## Setup Instructions
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Follow these steps to reproduce the system locally.
+
+1. Hardware
+
+ESP32-C3 development board
+
+DHT11 sensor module
+
+Single NeoPixel (WS2812B) RGB LED
+
+USB cable and jumper wires
+
+## Wire as documented in the report and diagrams:
+
+DHT11:
+
+VCC - 3.3 V (ESP32-C3)
+
+GND - GND
+
+DATA - GPIO 4
+
+NeoPixel:
+
+DIN - GPIO 5 
+
+VCC - 5 V (from ESP32 USB input)
+
+GND - GND (shared with ESP32)
+
+2. Run Mosquitto (Local MQTT Broker)
+
+Install Mosquitto.
+
+Start the broker from the terminal:
+
+mosquitto -v
+
+This runs the broker on localhost port 1883.
+
+3. Start Node-RED
+
+Start Node-RED from the terminal:
+
+node-red
+
+
+Then open the editor in a browser:
+
+http://localhost:1880
+
+Import the Node-RED Flow
+
+Open node-red/flow.json from this repository.
+
+In Node-RED, click menu → Import → Paste the JSON → Import.
+
+Confirm that:
+
+MQTT nodes are configured to:
+
+Server: localhost
+
+Port: 1883
+## References
+
+This work was completed as part of an academic project titled:  
+**“ESP32-Based Environmental Monitoring System with Cloud Analytics and Bi-Directional Control.”**
