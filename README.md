@@ -49,7 +49,7 @@ A full system demonstration video is available on YouTube:
 ├── docs/ # Diagrams and reference images
 │
 └── README.md
-
+```
 
 ---
 
