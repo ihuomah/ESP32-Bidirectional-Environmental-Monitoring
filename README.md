@@ -1,124 +1,122 @@
-# ESP32-Bidirectional-Environmental-Monitoring
-ESP32-C3 based environmental monitoring system with MQTT, Node-RED dashboard, and bi-directional LED control.
-# ESP32-Based Environmental Monitoring System with Cloud Analytics and Bi-Directional Control
+ESP32-Bidirectional-Environmental-Monitoring
+ESP32-Based Environmental Monitoring System with Cloud Analytics and Bi-Directional Control
 
-This repository contains the implementation files for an ESP32-C3 based environmental monitoring system using a DHT11 sensor and NeoPixel RGB LED. The system integrates a locally hosted Mosquitto MQTT broker, Node-RED dashboard, and MongoDB for data logging and visualization.
+This repository contains the implementation files for an ESP32-C3-based environmental monitoring system using a DHT11 sensor and NeoPixel RGB LED.
+The system integrates a locally hosted Mosquitto MQTT broker, Node-RED dashboard, and MongoDB for data logging and visualization.
 
-## System Features
+System Features
 
-- Real-time temperature and humidity monitoring
-- Bi-directional control between Node-RED dashboard and ESP32-C3
-- Local MQTT publish/subscribe communication
-- MongoDB database for historical telemetry
-- Visual LED feedback in manual and automatic modes
+Real-time temperature and humidity monitoring
 
-## System Overview
+Bi-directional control between Node-RED dashboard and ESP32-C3
 
-**Architecture:**
-- ESP32-C3 with DHT11 and NeoPixel for sensing and actuation
-- Local Mosquitto MQTT broker
-- Node-RED for flow management and dashboard interface
-- MongoDB for data storage
+Local MQTT publish/subscribe communication
 
-## Demonstration Video
+MongoDB database for historical telemetry
 
-A full system demonstration video is available on YouTube:  
+Visual LED feedback in manual and automatic modes
 
+System Overview
 
-## Repository Structure
-```ESP32-Bidirectional-Env-Monitor/
+Architecture Components
+
+ESP32-C3: Microcontroller for sensing and actuation (DHT11 and NeoPixel RGB LED)
+
+Mosquitto MQTT Broker: Local publish/subscribe message hub
+
+Node-RED: Flow management, dashboard interface, and control logic
+
+MongoDB: Local database for telemetry storage and retrieval
+
+Demonstration Video
+
+A full system demonstration video is available on YouTube:
+Watch Demonstration Video on YouTube https://youtu.be/-6btnIcJw_A
+
+Repository Structure
+ESP32-Bidirectional-Environmental-Monitoring/
 │
-├── code/  ESP32 Arduino sketch
-├── node-red/ Exported Node-RED flow
-├── docs/  Diagrams and reference images
+├── code/           # ESP32 Arduino sketch
+│   └── main.ino
+│
+├── node-red/       # Exported Node-RED flow (flow.json)
+│
+├── docs/           # Diagrams and reference images
+│
 └── README.md
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## Prerequisites
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-The system was tested with the following:
+Prerequisites
 
-Arduino IDE
+The system was tested with the following software and environment:
 
-Mosquitto MQTT broker (local installation)
+Arduino IDE (latest version with ESP32 board support)
+
+Mosquitto MQTT Broker (local installation)
 
 Node-RED (local installation)
 
 MongoDB Community Server (local installation)
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-## Setup Instructions
------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Follow these steps to reproduce the system locally.
 
-1. Hardware
+Setup Instructions
+1. Hardware Requirements
 
-ESP32-C3 development board
+ESP32-C3 Development Board
 
-DHT11 sensor module
+DHT11 Temperature and Humidity Sensor
 
 Single NeoPixel (WS2812B) RGB LED
 
 USB cable and jumper wires
 
-## Wire as documented in the report and diagrams:
+Breadboard for connections
 
-DHT11:
+2. Wiring Connections
+Component	Pin	ESP32-C3 Pin	Description
+DHT11	VCC	3.3 V	Power supply
+DHT11	GND	GND	Common ground
+DHT11	DATA	GPIO 4	Digital signal
+NeoPixel	DIN	GPIO 5	LED control signal
+NeoPixel	VCC	5 V	Power from ESP32 USB
+NeoPixel	GND	GND	Shared ground
 
-VCC - 3.3 V (ESP32-C3)
+3. Run Mosquitto (Local MQTT Broker)
 
-GND - GND
-
-DATA - GPIO 4
-
-NeoPixel:
-
-DIN - GPIO 5 
-
-VCC - 5 V (from ESP32 USB input)
-
-GND - GND (shared with ESP32)
-
-2. Run Mosquitto (Local MQTT Broker)
-
-Install Mosquitto.
-
-Start the broker from the terminal:
+Install Mosquitto, then start the broker via terminal:
 
 mosquitto -v
 
+
 This runs the broker on localhost port 1883.
 
-3. Start Node-RED
+4. Start Node-RED
 
-Start Node-RED from the terminal:
+Launch Node-RED from the terminal:
 
 node-red
 
-Then open the editor in a browser:
 
+Open the Node-RED editor in your browser:
 http://localhost:1880
 
-Import the Node-RED Flow
+Import Node-RED Flow
 
 Open node-red/flow.json from this repository.
 
-In Node-RED, click menu > Import > Paste the JSON > Import.
+In Node-RED, click Menu > Import > Paste JSON > Import.
 
-Confirm that:
-
-MQTT nodes are configured to:
+Configure MQTT nodes:
 
 Server: localhost
 
 Port: 1883
 
-4. Deploy the flow.
+Deploy the flow once configuration is complete.
 
 5. Configure MongoDB
 
 Ensure MongoDB is running locally.
 
-In Node-RED, configure the MongoDB node to point to your local instance, for example:
+In Node-RED, configure the MongoDB node to point to your local instance:
 
 mongodb://localhost:27017
 
@@ -126,7 +124,8 @@ mongodb://localhost:27017
 
 Open the Arduino IDE.
 
-Load [code/main.ino](https://github.com/ihuomah/ESP32-Bidirectional-Environmental-Monitoring/blob/main/code/main.ino) from this repository.
+Load the sketch file:
+code/main.ino
 
 Select the correct ESP32-C3 board and COM port.
 
@@ -134,39 +133,56 @@ Update Wi-Fi SSID and password in the sketch if required.
 
 Upload the sketch to the ESP32-C3.
 
-On successful upload and startup, the ESP32-C3 should:
+Upon successful upload:
 
-Connect to your Wi-Fi.
+The ESP32-C3 connects to your Wi-Fi network.
 
-Connect to the local MQTT broker.
+Connects to the local MQTT broker.
 
-Publish sensor readings periodically.
+Publishes temperature and humidity readings.
 
-Subscribe to control topic(s) for LED and mode updates.
+Subscribes to LED and mode control topics.
 
 7. Run and Verify
 
-Open the Node-RED dashboard 
+Open the Node-RED dashboard.
 
-Confirm:
+Confirm that:
 
-Live temperature and humidity values are displayed.
+Live temperature and humidity readings are displayed.
 
-The LED responds correctly in automatic mode (based on thresholds).
+The LED responds correctly in automatic mode (based on temperature thresholds).
 
-Manual mode and control commands from the dashboard are received by the ESP32-C3.
+Manual mode control commands from the dashboard update the ESP32-C3.
 
-Data is logged into MongoDB.
+Telemetry data is stored in MongoDB.
 
-## Notes
+Notes
 
-All components (MQTT broker, Node-RED, MongoDB) were run locally for this implementation.
+All components (MQTT broker, Node-RED, MongoDB) were locally hosted.
 
-No external cloud MQTT services or remote dashboards were used.
+No external cloud MQTT services were used.
 
-Security (TLS/authentication) was not enabled in this prototype
+Security features such as TLS and authentication were not enabled in this prototype.
 
-## References
+This work was completed as part of an academic project titled:
+“ESP32-Based Environmental Monitoring System with Cloud Analytics and Bi-Directional Control.”
 
-This work was completed as part of an academic project titled:  
-**“ESP32-Based Environmental Monitoring System with Cloud Analytics and Bi-Directional Control.”**
+References
+
+
+L. D. Xu, W. He, and S. Li, "Internet of Things in Industries: A Survey," IEEE Transactions on Industrial Informatics, vol. 10, no. 4, pp. 2233–2243, 2014.
+
+G. Fortino and P. Trunfio, Internet of Things Based on Smart Objects: Technology, Middleware and Applications. Springer, 2014.
+
+D. Hercog, T. Lerher, M. Trunčič, and O. Težak, "Design and Implementation of ESP32-Based IoT Devices," Sensors, vol. 23, no. 15, p. 6739, 2023.
+
+B. Mishra and A. Kertesz, "The Use of MQTT in M2M and IoT Systems: A Survey," IEEE Access, vol. 8, pp. 201071–201086, 2020.
+
+A. Zare and M. T. Iqbal, "Low-Cost ESP32, Raspberry Pi, Node-Red, and MQTT Protocol Based SCADA System," in Proc. IEEE IEMTRONICS, pp. 1–5.
+
+P. Jupyter, “Jupyter Notebook Documentation,” 2024. [Online]. Available: https://jupyter.org
+
+J. J. Correa-Quiroz, M. A. Toribio-Barrueto, and C. Castro-Vargas, "IoT System with ESP32 for Smart Drip Irrigation and Climate Monitoring in Greenhouses," Emerging Science Journal, vol. 9, no. 3, pp. 1133–1157, 2025.
+
+P. Burgess, Adafruit NeoPixel Best Practices Guide, 2013. [Online]. Available: https://learn.adafruit.com/adafruit-neopixel-uberguide/best-practices
