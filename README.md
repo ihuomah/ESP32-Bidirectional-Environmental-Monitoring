@@ -146,7 +146,7 @@ Subscribe to control topic(s) for LED and mode updates.
 
 7. Run and Verify
 
-Open the Node-RED dashboard (as defined in your flow).
+Open the Node-RED dashboard 
 
 Confirm:
 
