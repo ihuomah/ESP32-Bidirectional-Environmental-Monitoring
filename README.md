@@ -39,7 +39,7 @@ A full system demonstration video is available on YouTube:
 
 ## Repository Structure
 
-ESP32-Bidirectional-Environmental-Monitoring/
+```ESP32-Bidirectional-Environmental-Monitoring/
 │
 ├── code/ # ESP32 Arduino sketch
 │ └── main.ino
