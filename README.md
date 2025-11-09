@@ -28,7 +28,7 @@ A full system demonstration video is available on YouTube:
 ## Repository Structure
 ```ESP32-Bidirectional-Env-Monitor/
 │
-├── code/ # ESP32 Arduino sketch
-├── node-red/ # Exported Node-RED flow
-├── docs/ # Diagrams and reference images
+├── code/  ESP32 Arduino sketch
+├── node-red/ Exported Node-RED flow
+├── docs/  Diagrams and reference images
 └── README.md
