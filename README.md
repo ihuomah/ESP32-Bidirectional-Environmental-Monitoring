@@ -126,7 +126,7 @@ mongodb://localhost:27017
 
 Open the Arduino IDE.
 
-Load code/main.ino from this repository.
+Load [code/main.ino](https://github.com/ihuomah/ESP32-Bidirectional-Environmental-Monitoring/blob/main/code/main.ino) from this repository.
 
 Select the correct ESP32-C3 board and COM port.
 
