@@ -94,7 +94,6 @@ Start Node-RED from the terminal:
 
 node-red
 
-
 Then open the editor in a browser:
 
 http://localhost:1880
@@ -103,7 +102,7 @@ Import the Node-RED Flow
 
 Open node-red/flow.json from this repository.
 
-In Node-RED, click menu → Import → Paste the JSON → Import.
+In Node-RED, click menu > Import > Paste the JSON > Import.
 
 Confirm that:
 
@@ -112,6 +111,52 @@ MQTT nodes are configured to:
 Server: localhost
 
 Port: 1883
+
+4. Deploy the flow.
+
+5. Configure MongoDB
+
+Ensure MongoDB is running locally.
+
+In Node-RED, configure the MongoDB node to point to your local instance, for example:
+
+mongodb://localhost:27017
+
+6. Flash the ESP32-C3
+
+Open the Arduino IDE.
+
+Load code/main.ino from this repository.
+
+Select the correct ESP32-C3 board and COM port.
+
+Update Wi-Fi SSID and password in the sketch if required.
+
+Upload the sketch to the ESP32-C3.
+
+On successful upload and startup, the ESP32-C3 should:
+
+Connect to your Wi-Fi.
+
+Connect to the local MQTT broker.
+
+Publish sensor readings periodically.
+
+Subscribe to control topic(s) for LED and mode updates.
+
+7. Run and Verify
+
+Open the Node-RED dashboard (as defined in your flow).
+
+Confirm:
+
+Live temperature and humidity values are displayed.
+
+The LED responds correctly in automatic mode (based on thresholds).
+
+Manual mode and control commands from the dashboard are received by the ESP32-C3.
+
+Data is logged into MongoDB.
 ## References
 
 This work was completed as part of an academic project titled:  
