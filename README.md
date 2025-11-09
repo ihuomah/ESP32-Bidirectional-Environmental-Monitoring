@@ -164,7 +164,8 @@ All components (MQTT broker, Node-RED, MongoDB) were run locally for this implem
 
 No external cloud MQTT services or remote dashboards were used.
 
-Security (TLS/authentication) was not enabled in this prototype; it is suggested as future work.
+Security (TLS/authentication) was not enabled in this prototype
+
 ## References
 
 This work was completed as part of an academic project titled:  
