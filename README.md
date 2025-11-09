@@ -95,8 +95,9 @@ Install Mosquitto, then start the broker via terminal:
 
 ```
 mosquitto -v
-This runs the broker on localhost port 1883.
 ```
+This runs the broker on localhost port 1883.
+
 ## 4. Start Node-RED
 
 Launch Node-RED from the terminal:
